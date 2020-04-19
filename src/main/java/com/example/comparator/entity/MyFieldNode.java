@@ -25,7 +25,7 @@ public class MyFieldNode {
 	@Embedded 
 	private MyDocHeadersList dataTypeDefnParameters;
 	
-	private String sequence;
+	private float sequence;
 	private boolean searchableFlag;
 	private boolean deletedFlag;
 	private boolean primaryKeyFlag;
@@ -94,11 +94,11 @@ public class MyFieldNode {
 		this.dataTypeDefnParameters = dataTypeDefnParameters;
 	}
 
-	public String getSequence() {
+	public float getSequence() {
 		return sequence;
 	}
 
-	public void setSequence(String sequence) {
+	public void setSequence(float sequence) {
 		this.sequence = sequence;
 	}
 

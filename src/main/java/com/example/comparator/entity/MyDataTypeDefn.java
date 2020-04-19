@@ -2,34 +2,37 @@ package com.example.comparator.entity;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Embeddable;
 
 @Embeddable
 public class MyDataTypeDefn {
-	private String d_dataTypeDefnId;
-	private String d_name;
+	@Column(name = "dtype_dataTypeDefnId")
+	private String dataTypeDefnId;
+	@Column(name = "dtype_name")
+	private String name;
 	@ElementCollection
 	private List<String> parameterDefns;
 
 	public MyDataTypeDefn()
 	{
 	}
-	
-	public String getD_dataTypeDefnId() {
-		return d_dataTypeDefnId;
+
+	public String getDataTypeDefnId() {
+		return dataTypeDefnId;
 	}
 
-	public void setD_dataTypeDefnId(String d_dataTypeDefnId) {
-		this.d_dataTypeDefnId = d_dataTypeDefnId;
+	public void setDataTypeDefnId(String dataTypeDefnId) {
+		this.dataTypeDefnId = dataTypeDefnId;
 	}
 
-	public String getD_name() {
-		return d_name;
+	public String getName() {
+		return name;
 	}
 
-	public void setD_name(String d_name) {
-		this.d_name = d_name;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public List<String> getParameterDefns() {

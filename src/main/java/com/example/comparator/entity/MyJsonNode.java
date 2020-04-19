@@ -24,7 +24,7 @@ public class MyJsonNode {
 	private String name;
 	private String label;
 	private String description;
-	private String version;
+	private float version;
 	private boolean activeFlag; 
 	private String type;
 	private String tenantId;
@@ -93,11 +93,11 @@ public class MyJsonNode {
 		this.description = description;
 	}
 
-	public String getVersion() {
+	public float getVersion() {
 		return version;
 	}
 
-	public void setVersion(String version) {
+	public void setVersion(float version) {
 		this.version = version;
 	}
 
@@ -181,16 +181,18 @@ public class MyJsonNode {
 		result = prime * result + (activeFlag ? 1231 : 1237);
 		result = prime * result + ((apiConnectionDefn == null) ? 0 : apiConnectionDefn.hashCode());
 		result = prime * result + ((apiConnectionDefnId == null) ? 0 : apiConnectionDefnId.hashCode());
+		result = prime * result + ((apiHeaders == null) ? 0 : apiHeaders.hashCode());
 		result = prime * result + ((apiPath == null) ? 0 : apiPath.hashCode());
 		result = prime * result + ((baseMasterDataDefnId == null) ? 0 : baseMasterDataDefnId.hashCode());
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
+		result = prime * result + ((fields == null) ? 0 : fields.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((label == null) ? 0 : label.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((objectDefn == null) ? 0 : objectDefn.hashCode());
 		result = prime * result + ((tenantId == null) ? 0 : tenantId.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
-		result = prime * result + ((version == null) ? 0 : version.hashCode());
+		result = prime * result + Float.floatToIntBits(version);
 		return result;
 	}
 
@@ -215,6 +217,11 @@ public class MyJsonNode {
 				return false;
 		} else if (!apiConnectionDefnId.equals(other.apiConnectionDefnId))
 			return false;
+		if (apiHeaders == null) {
+			if (other.apiHeaders != null)
+				return false;
+		} else if (!apiHeaders.equals(other.apiHeaders))
+			return false;
 		if (apiPath == null) {
 			if (other.apiPath != null)
 				return false;
@@ -229,6 +236,13 @@ public class MyJsonNode {
 			if (other.description != null)
 				return false;
 		} else if (!description.equals(other.description))
+			return false;
+		if (fields == null) {
+			if (other.fields != null)
+				return false;
+		} else if (!fields.equals(other.fields))
+			return false;
+		if (id != other.id)
 			return false;
 		if (label == null) {
 			if (other.label != null)
@@ -255,10 +269,7 @@ public class MyJsonNode {
 				return false;
 		} else if (!type.equals(other.type))
 			return false;
-		if (version == null) {
-			if (other.version != null)
-				return false;
-		} else if (!version.equals(other.version))
+		if (Float.floatToIntBits(version) != Float.floatToIntBits(other.version))
 			return false;
 		return true;
 	}
