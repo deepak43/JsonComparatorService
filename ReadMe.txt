@@ -16,8 +16,13 @@ Payload : Updated JSON content
 DELETE : /base-json/{id}
 
 5. To compare JSON content with base JSON record content
-POST : /compare-json/{id}
-Payload : JSON content from Input.json
+POST : /compare-jsons
+Payload : Prepare payload by using Id of base JSON record and JSON content from Input.json
+e.g. 
+{
+    "baseJsonID": 1223,   //Id or Primary key of the base record inserted by POST API
+    "inputJson":  <content of Input.json file>
+}
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
@@ -49,7 +54,7 @@ localhost:8080/
 6. You can see the base JSON content by GET : /base-json/{id} where id is retrieved in above step.
 e.g. If id retrieved in above step is 101 then, GET call be -
 GET : localhost:8080/base-json/101
-7. To compare the JSON from Input.json with base JSON content, use POST : /compare-json/{id} where id is of the base json record and payload for this is JSON content from Input.json file
+7. To compare the JSON from Input.json with base JSON content, use POST : /compare-jsons and prepare payload for this as mentioned above in REST api endpoints section for this API.
 8. This will return difference between two JSONs if any.
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-

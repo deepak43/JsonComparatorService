@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.comparator.entity.MyJsonDocument;
+import com.example.comparator.entity.MyJsonToCompareDocument;
 import com.example.comparator.service.BaseJsonService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -45,10 +46,10 @@ public class BaseJsonController {
 	{
 		jsonService.deleteBaseJson(id);
 	}
-	
-	@PostMapping("/compare-json/{id}")
-	public Map<String, Object> compareWithBaseJson(@PathVariable("id") int id, @RequestBody MyJsonDocument docToCheck)
+
+	@PostMapping("/compare-jsons")
+	public Map<String, Object> compareWithBaseJson(@RequestBody MyJsonToCompareDocument jsonToCompare)
 	{
-		return jsonService.compareWithBaseJson(id, docToCheck);
+		return jsonService.compareWithBaseJson(jsonToCompare.getBaseJsonID(), jsonToCompare.getInputJson());
 	}
 }
