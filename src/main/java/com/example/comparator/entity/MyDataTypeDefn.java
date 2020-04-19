@@ -6,6 +6,9 @@ import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Embeddable;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 @Embeddable
 public class MyDataTypeDefn {
 	@Column(name = "dtype_dataTypeDefnId")
@@ -13,6 +16,7 @@ public class MyDataTypeDefn {
 	@Column(name = "dtype_name")
 	private String name;
 	@ElementCollection
+	@JsonInclude(value = Include.NON_EMPTY)
 	private List<String> parameterDefns;
 
 	public MyDataTypeDefn()
