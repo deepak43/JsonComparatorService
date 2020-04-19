@@ -51,7 +51,6 @@ public class JsonComparatorUtil {
 				if(!isNodeAvailable)
 				{
 					contentNodeMap.put(docNode.getName(), docNode);
-					System.out.println(docNode);
 				}
 			}
 			
