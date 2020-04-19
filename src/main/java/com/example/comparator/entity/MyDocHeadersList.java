@@ -53,5 +53,10 @@ public class MyDocHeadersList {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "MyDocHeadersList [apiHeders=" + apiHeders + "]";
+	}
 	
 }

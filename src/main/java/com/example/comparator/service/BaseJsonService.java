@@ -1,5 +1,7 @@
 package com.example.comparator.service;
 
+import java.util.Map;
+
 import com.example.comparator.entity.MyJsonDocument;
 
 public interface BaseJsonService {
@@ -7,5 +9,5 @@ public interface BaseJsonService {
 	public MyJsonDocument getBaseJson(int id);
 	public void updateBaseJson(MyJsonDocument docNode);
 	public void deleteBaseJson(int id);
-	public MyJsonDocument compareWithBaseJson(MyJsonDocument docToCheck);
+	public Map<String, Object> compareWithBaseJson(int baseDocumentId, MyJsonDocument docToCheck);
 }

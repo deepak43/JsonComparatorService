@@ -166,15 +166,6 @@ public class MyJsonNode {
 	}
 
 	@Override
-	public String toString() {
-		return "MyJsonNode [id=" + id + ", apiConnectionDefnId=" + apiConnectionDefnId + ", apiPath=" + apiPath
-				+ ", name=" + name + ", label=" + label + ", description=" + description + ", version=" + version
-				+ ", activeFlag=" + activeFlag + ", type=" + type + ", tenantId=" + tenantId + ", apiConnectionDefn="
-				+ apiConnectionDefn + ", baseMasterDataDefnId=" + baseMasterDataDefnId + ", objectDefn=" + objectDefn
-				+ ", apiHeaders=" + "]";
-	}
-
-	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -186,7 +177,6 @@ public class MyJsonNode {
 		result = prime * result + ((baseMasterDataDefnId == null) ? 0 : baseMasterDataDefnId.hashCode());
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + ((fields == null) ? 0 : fields.hashCode());
-		result = prime * result + id;
 		result = prime * result + ((label == null) ? 0 : label.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((objectDefn == null) ? 0 : objectDefn.hashCode());
@@ -217,11 +207,6 @@ public class MyJsonNode {
 				return false;
 		} else if (!apiConnectionDefnId.equals(other.apiConnectionDefnId))
 			return false;
-		if (apiHeaders == null) {
-			if (other.apiHeaders != null)
-				return false;
-		} else if (!apiHeaders.equals(other.apiHeaders))
-			return false;
 		if (apiPath == null) {
 			if (other.apiPath != null)
 				return false;
@@ -240,9 +225,7 @@ public class MyJsonNode {
 		if (fields == null) {
 			if (other.fields != null)
 				return false;
-		} else if (!fields.equals(other.fields))
-			return false;
-		if (id != other.id)
+		} else if (!(fields.size()==other.fields.size()))
 			return false;
 		if (label == null) {
 			if (other.label != null)
@@ -273,4 +256,14 @@ public class MyJsonNode {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "MyJsonNode [id=" + id + ", apiConnectionDefnId=" + apiConnectionDefnId + ", apiPath=" + apiPath
+				+ ", name=" + name + ", label=" + label + ", description=" + description + ", version=" + version
+				+ ", activeFlag=" + activeFlag + ", type=" + type + ", tenantId=" + tenantId + ", apiConnectionDefn="
+				+ apiConnectionDefn + ", baseMasterDataDefnId=" + baseMasterDataDefnId + ", objectDefn=" + objectDefn
+				+ ", apiHeaders=" + apiHeaders + ", fields=" + fields + "]";
+	}
+
 }

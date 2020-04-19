@@ -67,17 +67,10 @@ public class MyJsonDocument {
 	}
 
 	@Override
-	public String toString() {
-		return "MyJsonDocument [id=" + id + ", status=" + status + ", content=" + content + ", messages=" + messages
-				+ "]";
-	}
-
-	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((content == null) ? 0 : content.hashCode());
-		result = prime * result + id;
 		result = prime * result + ((messages == null) ? 0 : messages.hashCode());
 		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		return result;
@@ -97,8 +90,6 @@ public class MyJsonDocument {
 				return false;
 		} else if (!content.equals(other.content))
 			return false;
-		if (id != other.id)
-			return false;
 		if (messages == null) {
 			if (other.messages != null)
 				return false;
@@ -111,6 +102,11 @@ public class MyJsonDocument {
 			return false;
 		return true;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "MyJsonDocument [id=" + id + ", status=" + status + ", content=" + content + ", messages=" + messages
+				+ "]";
+	}
 	
 }

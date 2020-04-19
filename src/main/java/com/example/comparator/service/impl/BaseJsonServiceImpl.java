@@ -1,5 +1,6 @@
 package com.example.comparator.service.impl;
 
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,8 +51,8 @@ public class BaseJsonServiceImpl implements BaseJsonService {
 	}
 
 	@Override
-	public MyJsonDocument compareWithBaseJson(MyJsonDocument docToCheck) {
-		MyJsonDocument baseDocument = getBaseJson(1);
+	public Map<String, Object> compareWithBaseJson(int baseDocumentId, MyJsonDocument docToCheck) {
+		MyJsonDocument baseDocument = getBaseJson(baseDocumentId);
 		try 
 		{
 			if(!(docToCheck.equals(baseDocument)))

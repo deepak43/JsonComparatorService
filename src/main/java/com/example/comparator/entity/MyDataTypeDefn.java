@@ -42,4 +42,48 @@ public class MyDataTypeDefn {
 	public void setParameterDefns(List<String> parameterDefns) {
 		this.parameterDefns = parameterDefns;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((dataTypeDefnId == null) ? 0 : dataTypeDefnId.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((parameterDefns == null) ? 0 : parameterDefns.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MyDataTypeDefn other = (MyDataTypeDefn) obj;
+		if (dataTypeDefnId == null) {
+			if (other.dataTypeDefnId != null)
+				return false;
+		} else if (!dataTypeDefnId.equals(other.dataTypeDefnId))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (parameterDefns == null) {
+			if (other.parameterDefns != null)
+				return false;
+		} else if (!parameterDefns.equals(other.parameterDefns))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "MyDataTypeDefn [dataTypeDefnId=" + dataTypeDefnId + ", name=" + name + ", parameterDefns="
+				+ parameterDefns + "]";
+	}
+	
 }

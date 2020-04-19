@@ -1,5 +1,7 @@
 package com.example.comparator.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -44,9 +46,9 @@ public class BaseJsonController {
 		jsonService.deleteBaseJson(id);
 	}
 	
-	@PostMapping("/compare-json")
-	public MyJsonDocument compareWithBaseJson(@RequestBody MyJsonDocument docToCheck)
+	@PostMapping("/compare-json/{id}")
+	public Map<String, Object> compareWithBaseJson(@PathVariable("id") int id, @RequestBody MyJsonDocument docToCheck)
 	{
-		return jsonService.compareWithBaseJson(docToCheck);
+		return jsonService.compareWithBaseJson(id, docToCheck);
 	}
 }
