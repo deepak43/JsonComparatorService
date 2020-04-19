@@ -39,17 +39,17 @@ Here, .jar file will be created in ./target folder
 2. To run .jar
     java -jar <jar file name>.jar
 
-Now, webapps is up and you can access at - 
+Now, application is running and you can access at - 
 
 localhost:8080/
 
 3. You can use above REST end-points for specific purpose as mentioned above.
-4. First add base json content using POST : /base-json end-point with payload as JSON content from Base.json file
-5. This will return id of the base json record which you need to notedown since it is important for multiple calls
+4. First add base JSON content using POST : /base-json end-point with payload as JSON content from Base.json file
+5. This will return Id of the base json record which you need to notedown since it is important for multiple calls
 6. You can see the base JSON content by GET : /base-json/{id} where id is retrieved in above step.
 e.g. If id retrieved in above step is 101 then, GET call be -
 GET : localhost:8080/base-json/101
-7. To compare the JSON from Input.json with base JSON content, use POST :  /compare-json/{id} where id is of the base json record and payload for this is JSON content from Input.json file
+7. To compare the JSON from Input.json with base JSON content, use POST : /compare-json/{id} where id is of the base json record and payload for this is JSON content from Input.json file
 8. This will return difference between two JSONs if any.
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
